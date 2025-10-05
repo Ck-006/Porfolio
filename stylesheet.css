@@ -1,0 +1,281 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+*{
+    /* box-sizing: border-box; */
+    margin: 0px;
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: black;
+
+}
+nav{
+    position: sticky;
+    top: 0px;
+    padding: 20px 20px;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+}
+nav h2::after{
+    content: ".";
+    color: hsl(116, 100%, 72%);
+}
+#sidebar-active{
+    display: none;
+}
+.open-sidebar-button, .close-sidebar-button{
+    display: none;
+}
+nav svg{
+    fill: hsl(116, 100%, 72%);
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    list-style-type: none;    
+    margin: 20px;  
+}
+nav ul li button{
+    box-shadow: 0px 0px 10px hsl(116, 100%, 72%);
+    padding: 10px;
+    border-radius: 20px;
+    color:greenyellow;
+    background-color: black;
+    text-decoration: none;
+    transition-duration: .5s;
+}
+nav ul li:hover button{
+    color: black;
+    background-color: hsl(116, 100%, 72%);
+    border: 2px solid hsl(116, 39%, 46%);
+    box-shadow: 0px 0px 30px hsl(116, 100%, 72%);
+    border-radius: 20px;
+}
+
+.BackVideo{
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+section{
+    padding:40px
+}
+
+section#about content{
+    text-align: center;
+}
+section#about img{
+    height: 200px;
+    border-radius: 30px;
+}
+section#about img:hover{
+    border-image: linear-gradient(to bottom, hsl(116, 100%, 72%), transparent) 1;
+}
+
+/* section#about{
+    background-image: url(https://wallpapers.com/images/featured/coding-background-9izlympnd0ovmpli.jpg);
+    background-position: center;
+    transition-duration: .5s;
+}
+section#about::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+} */
+
+
+
+
+
+section div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    
+    border: 0px solid hsl(116, 100%, 72%);
+    border-radius: 10px;
+    height: 90vh;
+    transition-duration: .5s;
+}
+/* section:hover div{
+    border-radius: 50px;
+    box-shadow: 0px 0px 30px hsl(116, 100%, 72%);
+} */
+section h1{
+    text-align: center;
+    width:50%;
+    padding: 20px;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    box-shadow: 0px 0px 1px hsl(116, 100%, 72%);
+    transition-duration: .5s;
+}
+section:hover h1{
+    border: 2px solid hsl(116, 100%, 72%);
+    box-shadow: 0px 0px 25px hsl(116, 100%, 72%);
+}
+section p{
+    color:hsl(116, 100%, 72%);
+}
+content{
+    width: 100%;
+    height: 60%;
+}
+
+
+/* skills section styling */
+cards{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+cards card{
+    height: 50%;
+    padding: 40px;
+    border-radius: 20px;
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to bottom, hsl(0, 0%, 100%), transparent) 1;
+    transition-duration: .5s;
+}
+cards card:hover{
+    border-image: linear-gradient(to bottom, hsl(116, 100%, 72%), transparent) 1;
+    transform: scale(1.1);
+}
+/* ul {
+    visibility: hidden;
+    opacity: 0;
+    transition-duration: .5s;
+    } */
+ul li{
+    color: hsl(0, 0%, 66%);
+    transition-duration: .5s;
+}
+card:hover ul li{
+    color : white;
+}
+h3{
+transition-duration: .5s;
+}
+cards card:hover h3{
+    color: hsl(116, 100%, 72%);
+}
+
+
+
+
+
+
+
+/* contact form styling */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    gap: 1rem;
+}
+.contact-form input, .contact-form textarea {
+    background-color: #1a1a1a;
+    border: 1px solid #444;
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 1rem;
+}
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: none;
+    border-color: hsl(116, 100%, 72%);
+}
+.contact-form button {
+    background-color: hsl(116, 100%, 72%);
+    color: black;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+.contact-form button:hover {
+    opacity: 0.8;
+}
+
+/* footer styling */
+footer {
+    text-align: center;
+    padding: 20px 40px;
+    background-color: #111;
+    color: #888;
+}
+
+@media (max-width: 800px){
+    .open-sidebar-button, .close-sidebar-button{
+        display: block;
+    }
+    #sidebar-active:checked ~ ul{
+        right: 0px;
+    }
+    nav ul{
+        margin: 0px;
+        background-color: black;
+        transition-duration: .5s;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top : 0px;
+        right: -100%;
+    }
+    nav ul li button{
+        box-shadow: 0px 0px 0px hsl(116, 100%, 72%);
+        width: 100%;
+        /* min-width: 100px; */
+        padding: 10px;
+        border-radius: 0px;
+        color:greenyellow;
+        background-color: black;
+        text-decoration: none;
+        transition-duration: .5s;
+    }
+    nav ul li:hover button{
+        color: black;
+        background-color: hsl(116, 100%, 72%);
+        border: 2px solid hsl(116, 39%, 46%);
+        box-shadow: 0px 0px 30px hsl(116, 100%, 72%);
+        border-radius: 0px;
+    }
+    nav ul li{
+        list-style-type: none;    
+        margin: 0px;  
+        width: 100%;
+    }
+    cards {
+        flex-wrap: wrap;
+    }
+
+    section div{
+        height: auto;
+    }
+    
+}
